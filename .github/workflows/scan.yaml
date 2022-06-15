@@ -33,7 +33,7 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
       - name: Build docker images
-        run: docker pull trufflesecurity/trufflehog:latest
+        run: docker pull trufflesecurity/trufflehog:latest; echo $PWD
       - name: Run tests
         run: docker run -v "$PWD:/pwd" trufflesecurity/trufflehog:latest filesystem --directory=/pwd -j > trufflehog_report.json
     
