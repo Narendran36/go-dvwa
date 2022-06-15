@@ -35,5 +35,5 @@ jobs:
       - name: Build docker images
         run: docker pull trufflesecurity/trufflehog:latest
       - name: Run tests
-        run: docker run -it -v "$PWD:/pwd" trufflesecurity/trufflehog:latest filesystem --directory=/pwd -j > trufflehog_report.json
+        run: docker run -v "$PWD:/pwd" trufflesecurity/trufflehog:latest filesystem --directory=/pwd -j > trufflehog_report.json
     
